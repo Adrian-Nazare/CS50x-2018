@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+<table class="table table-sm">
+    <!--Setting names of the columns-->
+    <thead> Overview </thead>
+    <tr>
+        <th>Stock symbol</th>
+        <th>Transaction (buy/sell)</th>
+        <th>No. shares</th>
+        <th>Price per share</th>
+        <th>Total value</th>
+        <th>Timestamp</th>
+    </tr>
+
+  <!--Generating all dynamic values-->
+    {% for row in matrix %}
+    <tr>
+        <td>{{ row['stock_symbol'] }}</td>
+        <td>{{ row['transaction'] }}</td>
+        <td>{{ row['no_shares'] }}</td>
+        <td>{{ row['price_share'] }}</td>
+        <td>{{ row['total_value'] }}</td>
+        <td>{{ row['time'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
