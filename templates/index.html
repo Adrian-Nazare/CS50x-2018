@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+<table class="table table-sm">
+    <!--Setting names of the columns-->
+    <thead> Overview </thead>
+    <tr>
+        <th>Stock name</th>
+        <th>Stock symbol</th>
+        <th>Shares</th>
+        <th>Price per share</th>
+        <th>Total value</th>
+    </tr>
+
+  <!--Generating all dynamic values-->
+    {% for row in matrix %}
+    <tr>
+        <td>{{ row['stock_name'] }}</td>
+        <td>{{ row['stock_symbol'] }}</td>
+        <td>{{ row['no_shares'] }}</td>
+        <td>{{ row['price_share'] }}</td>
+        <td>{{ row['total_value'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p>Available cash: {{values[0]}}</p>
+<p>Total value of assets: {{values[1]}}</p>
+
+    <form action="/buy" method="post">
+        <div class="form-group">
+            <h5>Please type in stock and number of shares to buy</h5>
+        </div>
+        <div class="form-group">
+            <input autocomplete="on" autofocus class="form-control" name="symbol" placeholder="Stock symbol" type="text" />
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Number of shares" type="number" />
+        </div>
+        <div class ="form-group">
+            <button class="btn btn-primary" type="submit">Buy</button>
+        </div>
+    </form>
+{% endblock %}
