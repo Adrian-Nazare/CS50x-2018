@@ -1,0 +1,21 @@
+<table class="table table-sm">
+    <thead> Sequence matching and edit distance: </thead>
+
+    <tr>
+        <th><b>i\j</b></th>
+        {% for b in s2 %}
+        <th> {{ b }}</th>
+        {% endfor %}
+    </tr>
+    
+    {% for i in range ((s1)|length) %}
+    <tr>
+        <th>{{ s1[i] }}</th>
+        {% for j in range ((s2)|length) %}
+            <td>{{ matrix[i][j][0] }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+    
+    

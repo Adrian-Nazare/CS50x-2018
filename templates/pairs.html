@@ -1,0 +1,10 @@
+<p>
+    The following pairs are have the smallest editing distance between them: <b>{{ matrix[0][0][0][0] }}</b>
+</p>
+{% for i in pairs %}
+    <ul>
+      <li>{{ i[1] }}</li>
+      <li>{{ i[0] }}</li>  
+    </ul>
+    
+{% endfor %}
