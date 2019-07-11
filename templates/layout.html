@@ -1,0 +1,37 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <link href="/static/styles.css" rel="stylesheet"/>
+
+        <title>Base pairing</title>
+
+    </head>
+    <body>
+        
+      
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">Base pairing</a>
+            </nav>
+        
+       <div class="container-fluid">
+            <form action="paired" method="post">
+                Please input first DNA strand (A,C,G,T) or text entry: <input class="form-control" title="Only DNA bases allowed: A,C,G,T" name="string1" autocomplete="off", type="text">
+                Please input second DNA strand (A,C,G,T) or text entry: <input class="form-control" title="Only DNA bases allowed: A,C,G,T" name="string2" autocomplete="off", type="text">
+                <button type="submit"> Pair </button>
+            </form>
+      
+        
+        
+            {% block body %}{% endblock %}
+        </div>
+        
+    </body>
+</html>
